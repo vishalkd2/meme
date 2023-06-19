@@ -34,10 +34,7 @@ class MainActivity : AppCompatActivity() {
             // Creating an Intent to share the meme with other apps.
             val intent = Intent(Intent.ACTION_SEND)
             intent.type = "text/plain"
-            intent.putExtra(
-                Intent.EXTRA_TEXT,
-                "Hey, Checkout this cool meme ${memeUrls[currentMemeIndex]}"
-            )
+            intent.putExtra(Intent.EXTRA_TEXT, "Hey, Checkout this cool meme ${memeUrls[currentMemeIndex]}")
             val chooser = Intent.createChooser(intent, "Share this meme")
             startActivity(chooser)
         }
@@ -114,7 +111,7 @@ class MainActivity : AppCompatActivity() {
             currentMemeIndex--
             displayMeme()
         } else {
-            Toast.makeText(this, "No previous meme available", Toast.LENGTH_SHORT)
+            Toast.makeText(this, "No previous meme available", Toast.LENGTH_SHORT).show()
         }
     }
 }
